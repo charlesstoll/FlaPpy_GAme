@@ -9,7 +9,7 @@ game_state state_of_game = START_SCREEN;
 bool game_over = true;
 int scroll_speed = 10;
 int LOGIC_SPEED = 1;
-int SPAWN_FREQUENCY = 5;
+int SPAWN_FREQUENCY = 1;
 int spawn_loop_count = 0;
 int logic_loop_count = 0;
 
@@ -19,24 +19,24 @@ int start_new_game(void); //done
 int load_start_screen(void); //stubbed
 int load_background(void); //stubbed
 int load_game_over_screen(void); //stubbed
-int main_game_loop(void); 
+int main_game_loop(void); //finish with hardware
 int get_user_input(void); //stubbed
 int initialize_data(void); //done
 int reset_bird(struct bird *bird, int player_number); //done
 int remove_item(struct item *item); //done
-int print_game_state(void);
-int movement_update(void);
-int update_bird_speed(void);
-int do_update_bird_speed(struct bird *bird);
-int bird_movement(struct bird *bird);
-int bird_out_of_bounds_check(struct bird *bird);
-int item_passive_movement(struct item *item);
-int check_game_over(void);
-int spawn_item(void);
-int collision_detection(void);
-int do_collision(struct bird *bird, struct item *item);
-bool check_collision(struct bird *bird, struct item *item);
-int bird_collision_detection(struct bird* bird);
+int print_game_state(void); //done
+int movement_update(void); //done
+int update_bird_speed(void); //done
+int do_update_bird_speed(struct bird *bird); //done
+int bird_movement(struct bird *bird);   //done
+int bird_out_of_bounds_check(struct bird *bird); //done
+int item_passive_movement(struct item *item); //done
+int check_game_over(void); //done
+int spawn_item(void);  //done
+int collision_detection(void); //done
+int do_collision(struct bird *bird, struct item *item); //done
+bool check_collision(struct bird *bird, struct item *item);  //done
+int bird_collision_detection(struct bird* bird); //done
 
 
 
