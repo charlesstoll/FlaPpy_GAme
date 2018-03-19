@@ -136,7 +136,7 @@ int reset_bird(struct bird *bird, int player_number)
   bird->horz_spd = 0;
   bird->vert_spd = 0;
   bird->horz_pos = 5;
-  bird->vert_pos = 10 * (player_number+ 1);
+  bird->vert_pos = 20 + player_number;
   bird->score = 0;
   bird->alive = true;
 }
