@@ -1,6 +1,6 @@
 #include "structs.c"
 #include "defines.h"
-
+#include "bin_to_bcd.c"
 
 int main(int argc, char *argv[])
 {
@@ -32,4 +32,12 @@ int main(int argc, char *argv[])
     printf("%d\n", i);
   }
 
+
+  int x = 3879;
+  int hundreds = 0;
+  int thousands = 0;
+  int tens = 0;
+  int ones = 0;
+  bin_to_bcd(x, &thousands, &hundreds, &tens, &ones);
+  printf("%d = %d, %d, %d, %d\n", x, thousands, hundreds, tens, ones);
 }

@@ -5,7 +5,7 @@
 #define NULL_POINTER_EXCEPTION -1
 
 //game options declarations
-#define NUM_PLAYERS (2)
+#define NUM_PLAYERS (1)
 #define MAX_NUM_ITEMS (10)
 
 //constant definitions
