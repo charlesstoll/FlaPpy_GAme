@@ -13,6 +13,14 @@ int SPAWN_FREQUENCY = 1;
 int spawn_loop_count = 0;
 int logic_loop_count = 0;
 
+//random number arrays and pointers
+int LOCATION_SPAWN_POINTER = 0;
+int LENGTH_RAND_ITEM_ARRAY = 21;
+int ITEM_SPAWN_POINTER = 0;
+int LENGTH_RAND_LOCATION_ARRAY = 18;
+bool RAND_ITEM_ARRAY[] = {BOMB, BOMB, COIN, COIN, COIN, BOMB, COIN, BOMB, COIN, COIN, BOMB, BOMB, COIN, COIN, COIN, BOMB, COIN, BOMB, COIN, BOMB, COIN };
+int RAND_LOCATION_ARRAY[] = {10, 35, 42, 6, 24, 15, 20, 18, 33, 5, 43, 15, 22, 32, 10, 8, 33, 33 };
+
 //function declarations
 int do_game(void); //done
 int start_new_game(void); //done
@@ -340,9 +348,12 @@ int spawn_item()
   {
     return 0;
   }
-  int r = rand();
-  items[unused_item_number].type = r % NUMBER_OF_OBJ_TYPES;
-  items[unused_item_number].vert_pos = (r % (BOTTOM_LOCATION - TOP_LOCATION)) + TOP_LOCATION;
+   ++ ITEM_SPAWN_POINTER;
+  if(ITEM_SPAWN_POINTER >= LENGTH_RAND_ITEM_ARRAY) ITEM_SPAWN_POINTER = 0;  
+  items[unused_item_number].type = RAND_ITEM_ARRAY[ITEM_SPAWN_POINTER];
+  ++ LOCATION_SPAWN_POINTER;
+  if(LOCATION_SPAWN_POINTER >= LENGTH_RAND_LOCATION_ARRAY) LOCATION_SPAWN_POINTER = 0;
+  items[unused_item_number].vert_pos = RAND_LOCATION_ARRAY[LOCATION_SPAWN_POINTER];
   items[unused_item_number].horz_pos = RIGHT_SIDE_LOCATION-1;
   items[unused_item_number].on_screen = true;
   return 0;
